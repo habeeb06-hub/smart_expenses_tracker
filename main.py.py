@@ -1,3 +1,4 @@
+#smart expenses tracker project
 import csv
 from datetime import datetime
 
