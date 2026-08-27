@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body style="font-family:Arial; background:#eef2f3;">
+
+<div style="width:500px;margin:auto;background:white;padding:20px;border-radius:10px;margin-top:50px;">
+
+<h2>Welcome {{ user }} 🎉</h2>
+<a href="/logout">Logout</a>
+
+<hr>
+
+<h3>Add Job</h3>
+<form method="POST" action="/add_job">
+<input type="text" name="title" placeholder="Job Title"><br><br>
+<input type="text" name="company" placeholder="Company"><br><br>
+<button>Add Job</button>
+</form>
+
+<hr>
+
+<h3>Job List</h3>
+
+<ul>
+{% for job in jobs %}
+<li>
+{{ job[1] }} - {{ job[2] }}
+<a href="/delete/{{job[0]}}">❌</a>
+</li>
+{% endfor %}
+</ul>
+
+</div>
+
+</body>
+</html>
